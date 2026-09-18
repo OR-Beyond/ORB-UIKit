@@ -1,0 +1,63 @@
+plugins {
+    id 'fabric-loom' version "${loom_version}"
+    id 'maven-publish'
+}
+
+version = project.lib_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+loom {
+    splitEnvironmentSourceSets()
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'Shedaniel'          // Cloth Config (transitive of owo-lib)
+        url = 'https://maven.shedaniel.me/'
+    }
+    maven {
+        name = 'Wisp Forest'        // owo-lib / owo-sentinel
+        url = 'https://maven.wispforest.io/releases'
+    }
+    maven {
+        name = 'JitPack'            // kdl4j, a transitive dependency of owo-lib
+        url = 'https://jitpack.io'
+        content { includeGroup 'com.github.kdl-org' }
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+
+    // Mojang official mappings (Yarn terminates at 1.21.11).
+    mappings loom.officialMojangMappings()
+
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    // owo-lib is the UI framework ORB-UIKit's brutalist widgets are built on. The library ships
+    // no fabric-api dependency: it is a UI library, consumers bring their own.
+    modImplementation "io.wispforest:owo-lib:${project.owo_version}"
+}
+
+processResources {
+    inputs.property "version", project.version
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}

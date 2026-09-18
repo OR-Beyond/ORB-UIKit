@@ -1,0 +1,21 @@
+# Gradle
+.gradle/
+**/build/
+
+# Fabric Loom run directories (root + example module)
+run/
+example/run/
+
+# IntelliJ IDEA
+.idea/
+out/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

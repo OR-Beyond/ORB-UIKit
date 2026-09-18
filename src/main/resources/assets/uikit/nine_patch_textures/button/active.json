@@ -1,0 +1,14 @@
+{
+  "texture": "uikit:textures/gui/brutal_button.png",
+  "texture_width": 16,
+  "texture_height": 48,
+  "repeat": false,
+  "corner_patch_size": {
+    "width": 3,
+    "height": 3
+  },
+  "center_patch_size": {
+    "width": 10,
+    "height": 10
+  }
+}
