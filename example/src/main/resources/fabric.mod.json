@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "orb-uikit-example",
+  "version": "0.1.0",
+  "name": "ORB-UIKit Example",
+  "description": "Standalone demo mod consuming the ORB-UIKit library via Gradle composite build; exercises all ten option kinds across two categories and three accordion groups.",
+  "authors": [ "OR-Beyond" ],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [ "dev.orbeyond.uikit.example.ExampleMod" ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "owo": ">=0.13.0",
+    "orb-uikit": "*",
+    "fabric-api": "*"
+  }
+}

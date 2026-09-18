@@ -1,0 +1,10 @@
+pluginManagement {
+    repositories {
+        maven { name = 'Fabric'; url = 'https://maven.fabricmc.net/' }
+        gradlePluginPortal()
+    }
+}
+
+includeBuild("..")
+
+rootProject.name = 'orb-uikit-example'

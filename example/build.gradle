@@ -1,0 +1,50 @@
+plugins {
+    id 'fabric-loom' version '1.17.20'
+    id 'java'
+}
+
+version = '0.1.0'
+group = 'dev.orbeyond.uikit.example'
+
+base {
+    archivesName = 'orb-uikit-example'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'Wisp Forest'        // owo-lib / owo-sentinel
+        url = 'https://maven.wispforest.io/releases'
+    }
+    maven {
+        name = 'Shedaniel'          // Cloth Config (transitive of owo-lib)
+        url = 'https://maven.shedaniel.me/'
+    }
+    maven {
+        name = 'JitPack'            // kdl4j, a transitive dependency of owo-lib
+        url = 'https://jitpack.io'
+        content { includeGroup 'com.github.kdl-org' }
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:1.21.11"
+
+    // Mojang official mappings (Yarn terminates at 1.21.11).
+    mappings loom.officialMojangMappings()
+
+    modImplementation "net.fabricmc:fabric-loader:0.19.4"
+
+    // owo-lib is the UI framework ORB-UIKit's brutalist widgets are built on.
+    modImplementation "io.wispforest:owo-lib:0.13.0+1.21.11"
+
+    // The library under demo, satisfied by the composite build substitution.
+    modImplementation "dev.orbeyond:orb-uikit:0.1.0"
+
+    // The library ships no fabric-api; the demo brings its own.
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.141.6+1.21.11"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+}
