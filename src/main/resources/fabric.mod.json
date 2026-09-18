@@ -4,7 +4,7 @@
   "version": "${version}",
   "name": "ORB-UIKit",
   "description": "YACL-style configuration UI library carrying the brutalist design system extracted from Vantage (Shader-Mod). Category -> group -> option builder, owo-ui based, zero coupling to any specific mod.",
-  "authors": [ "OR-Beyond", "TylerBits" ],
+  "authors": [ "TylerBits", "MikiDevAHM" ],
   "license": "MIT",
   "environment": "client",
   "entrypoints": {

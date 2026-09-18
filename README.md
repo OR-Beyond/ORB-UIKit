@@ -188,4 +188,4 @@ Press G in-game to open the screen. It demonstrates two categories (one icon tab
 
 ## Credits and license
 
-MIT. Copyright (c) 2026 OR-Beyond. Design and code derived from the configuration UI of Shader-Mod (Vantage) by TylerBits, also MIT. UI framework: owo-lib by Wisp Forest.
+MIT. Copyright (c) 2026 OR-Beyond. Authored by TylerBits and MikiDevAHM. Design and code derived from the configuration UI of Shader-Mod (Vantage) by TylerBits, also MIT. UI framework: owo-lib by Wisp Forest.

@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "name": "ORB-UIKit Example",
   "description": "Standalone demo mod consuming the ORB-UIKit library via Gradle composite build; exercises all ten option kinds across two categories and three accordion groups.",
-  "authors": [ "OR-Beyond" ],
+  "authors": [ "TylerBits", "MikiDevAHM" ],
   "license": "MIT",
   "environment": "client",
   "entrypoints": {
